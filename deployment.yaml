@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cml-project-deployment
+spec:
+  selector:
+    matchLabels:
+      app: cml-project-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cml-project-app
+    spec:
+      containers:
+      - name: cml-project-app
+        image: sudo007/cml_project2:latest
+        ports:
+        - containerPort: 8009
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: cml-project-service
+spec:
+  selector:
+    app: cml-project-app
+  ports:
+  - protocol: TCP
+    port: 8009
+    targetPort: 8009
+  type: NodePort
