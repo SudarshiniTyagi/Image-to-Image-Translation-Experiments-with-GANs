@@ -33,6 +33,6 @@ Session Affinity:         None
 External Traffic Policy:  Cluster
 Events:                   <none>
 ```
-The port against Nodeport is what you're looking for. Therefore, our application is running at `173.193.79.164:31609`. Replace the external IP and port according to your outputs.
+The port against Nodeport is what you're looking for. Therefore, our application is running at 173.193.79.164:31609. Replace the external IP and port according to your outputs.
 5. That's it, go to your browser and hit the URL, you should see something like this:
 ![alt text](https://github.com/SudarshiniTyagi/Image-to-Image-Translation-Experiments-with-GANs/blob/master/demo.jpeg?raw=true)
