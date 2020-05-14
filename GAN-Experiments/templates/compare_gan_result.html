@@ -1,0 +1,66 @@
+{% extends "compare_gan_uploader.html" %}
+
+{% block result %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img id="input_image" class="card-img-top" src="{{ url_for('static', filename='sketch2anime/testA/A.png') }}" alt="Sketch Input">
+                <div class="card-body">
+                  <p class="card-text">Sketch Input</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img id="output_image" class="card-img-top" src="{{ url_for('static', filename='sketch2anime/testB/B.png') }}" alt="Colored Input">
+                <div class="card-body">
+                  <p class="card-text">Colored Input</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img id="pix2pix_output" class="card-img-top" src="{{ url_for('static', filename='sketch2anime/results/sketch2anime_pix2pix/test_latest/images/AB_fake_B.png') }}" alt="Pix2Pix Output">
+            <div class="card-body">
+              <p class="card-text">Pix2Pix</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Time taken: {{timing['pix2pix']}} seconds</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img id="cyclegan_output" class="card-img-top" src="{{ url_for('static', filename='sketch2anime/results/sketch2anime_cyclegan/test_latest/images/A_fake_B.png') }}" alt="CycleGAN Output">
+            <div class="card-body">
+              <p class="card-text">CycleGAN</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Time taken: {{timing['cycle_gan']}} seconds</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
+            <img id="ugatit_output" class="card-img-top" src="{{ url_for('static', filename='sketch2anime/results/sketch2anime_ugatit/1_fake_B.png') }}" alt="UGAT-IT Output">
+            <div class="card-body">
+              <p class="card-text">UGAT-IT</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Time taken: {{timing['ugatit']}} seconds</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+{% endblock %}

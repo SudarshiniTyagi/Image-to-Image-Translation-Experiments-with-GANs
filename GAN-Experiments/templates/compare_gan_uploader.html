@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block uploader %}
+
+<section class="jumbotron text-center">
+	<div class="container">
+
+	  <h1 class="jumbotron-heading">GAN Experiment</h1>
+	  <p class="lead text-muted">We have experimented with various GANs on Anime-colorization task. Please try it out!</p>
+	  <p>
+
+	    <form action="{{ url_for('upload_file', dataset='sketch2anime', type='A')}}" method=post enctype=multipart/form-data>              
+	      <label class="btn btn-outline-secondary">
+	        <input type=file name=file>
+	        <input type=submit value="Upload Sketch Image">
+	      </label>
+	    </form>
+
+	    <form action="{{ url_for('upload_file', dataset='sketch2anime', type='B')}}" method=post enctype=multipart/form-data>              
+	      <label class="btn btn-outline-secondary">
+	        <input type=file name=file>
+	        <input type=submit value="Upload Colour Image">
+	      </label>
+	    </form>
+
+	  </p>
+	  <p>
+	    <a href="{{url_for('result', dataset='sketch2anime') }}" class="btn btn-success my-2">Run the experiment</a>
+	  </p>
+	</div>
+</section>
+
+{% endblock %}

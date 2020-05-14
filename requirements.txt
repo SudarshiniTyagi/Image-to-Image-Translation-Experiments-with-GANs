@@ -1,0 +1,6 @@
+torch
+torchvision
+Flask
+dominate
+scipy
+opencv-python

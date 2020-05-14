@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block uploader %}
+
+<section class="jumbotron text-center">
+	<div class="container">
+	  <h1 class="jumbotron-heading"> Clothes to Comics </h1>
+	  <p class="lead text-muted"> Change my clothes into comic style. Please try it out!</p>
+	  <p>
+
+	    <form action="{{ url_for('upload_file', dataset='c_c', type='A')}}" method=post enctype=multipart/form-data>              
+	      <label class="btn btn-outline-secondary">
+	        <input type=file name=file>
+	        <input type=submit value=" Upload Cloth Image ">
+	      </label>
+	    </form>
+
+	  </p>
+	  <p>
+	    <a href="{{url_for('single_result', dataset='c_c') }}" class="btn btn-success my-2">Convert my cloth</a>
+	  </p>
+	</div>
+</section>
+
+{% endblock %}

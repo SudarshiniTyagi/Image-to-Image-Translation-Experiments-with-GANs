@@ -1,0 +1,31 @@
+{% extends "old_young2_uploader.html" %}
+
+{% block result %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img id="input_image" class="card-img-top" src="{{ url_for('static', filename='old_young2/testA/A.png') }}" alt="Sketch Input">
+                <div class="card-body">
+                  <p class="card-text">Your Current Image</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img id="ugatit_old_young2_output" class="card-img-top" src="{{ url_for('static', filename='old_young2/results/old_young2_ugatit/1_fake_B.png') }}" alt="UGAT-IT Output">
+              <div class="card-body">
+                <p class="card-text">UGAT-IT Prediction <small class="text-muted">Time taken: {{timing['ugatit']}} seconds</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+{% endblock %}

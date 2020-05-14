@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Album example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  </head>
+
+  <body>
+
+    <header>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="{{url_for('clear') }}" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <strong>GAN Experiment</strong>
+          </a>
+          <a href="{{url_for('evaluate', dataset='c_c')}}" class="btn btn-dark"> <strong> Clothes to Comics </strong></a>
+          <a href="{{url_for('evaluate', dataset='old_young2')}}" class="btn btn-dark"> <strong> Make me old </strong></a>
+          <a href="{{url_for('evaluate', dataset='nyu_depth')}}" class="btn btn-dark"> <strong> Compute Depth Map from RGB </strong></a>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      {% block uploader %}{% endblock %}
+      {% block result %}{% endblock %}
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>&copy;Submitted by - Imran(ii398) & Sudarshini Tyagi(st3688)</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="./static/js/holder.min.js"></script>
+  <script type="text/javascript">
+
+    window.onload = function() {
+      var input_image = document.getElementById("input_image");
+      var output_image = document.getElementById("output_image");
+      var pix2pix_output = document.getElementById("pix2pix_output");
+      var cyclegan_output = document.getElementById("cyclegan_output");
+      var ugatit_output = document.getElementById("ugatit_output");
+      var ugatit_depth_output = document.getElementById("ugatit_depth_output");
+      var ugatit_cc_output = document.getElementById("ugatit_cc_output");
+      var ugatit_old_young2_output = document.getElementById("ugatit_old_young2_output");
+
+      function updateImage() {
+          if (input_image !== null){
+            input_image.src = input_image.src.split("?")[0] + "?" + new Date().getTime();  
+          }
+          if (output_image !== null){
+            output_image.src = output_image.src.split("?")[0] + "?" + new Date().getTime();
+          }
+          if (pix2pix_output !== null){
+            pix2pix_output.src = pix2pix_output.src.split("?")[0] + "?" + new Date().getTime();
+          }
+          if (cyclegan_output !== null){
+            cyclegan_output.src = cyclegan_output.src.split("?")[0] + "?" + new Date().getTime();
+          }
+          if (ugatit_output !== null){
+            ugatit_output.src = ugatit_output.src.split("?")[0] + "?" + new Date().getTime();
+          }
+          if (ugatit_depth_output !== null){
+            ugatit_depth_output.src = ugatit_depth_output.src.split("?")[0] + "?" + new Date().getTime();
+          }
+          if (ugatit_cc_output !== null){
+            ugatit_cc_output.src = ugatit_cc_output.src.split("?")[0] + "?" + new Date().getTime();
+          }
+          if (ugatit_old_young2_output !== null){
+            ugatit_old_young2_output.src = ugatit_old_young2_output.src.split("?")[0] + "?" + new Date().getTime();
+          }
+      }
+      updateImage()
+    }
+  </script>
+
+  </body>
+</html>
