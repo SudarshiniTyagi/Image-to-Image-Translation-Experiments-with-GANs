@@ -18,7 +18,7 @@ sudarshinityagi$ kubectl get nodes -o yaml | grep external-ip
 ```
 This is the address that we can access from anywhere to see if the app is running. We also need a port, to find that, run `kubectl describe services cml-project-servic`, the output will be something like this:
 ```
-sudarshinityagi$ kubectl describe services cml-project-servic
+sudarshinityagi$ kubectl describe services cml-project-service
 Name:                     cml-project-servic
 Namespace:                default
 Labels:                   <none>
