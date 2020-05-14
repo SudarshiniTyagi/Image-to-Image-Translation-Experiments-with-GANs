@@ -35,4 +35,4 @@ Events:                   <none>
 ```
 The port against Nodeport is what you're looking for. Therefore, our application is running at `http://50.23.5.147:31000`. Replace the external IP and port according to your outputs.
 5. That's it, go to your browser and hit the URL, you should see something like this:
-![alt text](https://github.com/SudarshiniTyagi/Image-to-Image-Translation-Experiments-with-GANs/blob/master/demo.jpg?raw=true)
+![alt text](https://github.com/SudarshiniTyagi/Image-to-Image-Translation-Experiments-with-GANs/blob/master/demo.jpeg?raw=true)
